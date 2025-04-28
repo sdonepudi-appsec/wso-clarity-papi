@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreateWOOutsequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="$axis2:HTTP_SC" name="statusCode" scope="default" type="STRING"/>
+    <property expression="$body/*" name="OFSCEndpointResponse" scope="default" type="STRING"/>
+    <property expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd' 'HH:mm:ss&quot;)" name="ResponseTimeStamp" scope="default" type="STRING"/>
+    <filter regex="200" source="$ctx:statusCode">
+        <then>
+            <filter regex="true" source="boolean(get-property('OFSCEndpointResponse'))">
+                <then>
+                    <call-template target="logtemplatev1">
+                        <with-param name="message" value="{fn:concat('CreateWO API OFSC EP Response is :', $ctx:OFSCEndpointResponse)}"/>
+                    </call-template>
+                    <property expression="//p:FaultTicket/p:RequestId/text()" name="RequestID" scope="default" type="STRING" xmlns:p="http://www.pldt.org/oic/integration/serviceticket"/>
+                    <property expression="//p:FaultTicket/p:Status/text()" name="Status" scope="default" type="STRING" xmlns:p="http://www.pldt.org/oic/integration/serviceticket"/>
+                    <property expression="//p:FaultTicket/p:CreatedDate/text()" name="CreatedDate" scope="default" type="STRING" xmlns:p="http://www.pldt.org/oic/integration/serviceticket"/>
+                    <property expression="//p:FaultTicket/p:Remarks/text()" name="Remarks" scope="default" type="STRING" xmlns:p="http://www.pldt.org/oic/integration/serviceticket"/>
+                    <property expression="//p:FaultTicket/p:FTNumber/text()" name="FTNumber" scope="default" type="STRING" xmlns:p="http://www.pldt.org/oic/integration/serviceticket"/>
+                    <payloadFactory media-type="json">
+                        <format>
+                        { 
+    "Header": { 
+        "TimeStamp": "$1", 
+        "CorrelationID": "$2", 
+        "RequestedChannel": "$3" 
+    }, 
+    "ResponsePayload": { 
+    "CreateWorkOrderResponsePayload": { 
+        "RequestID": "$4", 
+        "FTNumber": "$5", 
+        "Status": "$6", 
+        "Remarks": "$7", 
+        "CreatedDate": "$8 " 
+    }, 
+    "ResultOutputDetails": { 
+        "ResultCode": "200", 
+        "ResultStatus": "Success", 
+        "ResultMessage": "Request Completed Successfully" 
+    } 
+  } 
+}                        
+</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:ResponseTimeStamp"/>
+                            <arg evaluator="xml" expression="$ctx:CorrelationID"/>
+                            <arg evaluator="xml" expression="$ctx:RequestedChannel"/>
+                            <arg evaluator="xml" expression="$ctx:RequestID"/>
+                            <arg evaluator="xml" expression="$ctx:FTNumber"/>
+                            <arg evaluator="xml" expression="$ctx:Status"/>
+                            <arg evaluator="xml" expression="$ctx:Remarks"/>
+                            <arg evaluator="xml" expression="$ctx:CreatedDate"/>
+                        </args>
+                    </payloadFactory>
+                </then>
+                <else>
+                    <payloadFactory media-type="json">
+                        <format>
+						{
+							"Header": { 
+								"TimeStamp": "$1", 
+								"CorrelationID": "$2", 
+								"RequestedChannel": "$3" 
+							}, 
+							"CreateWorkOrderResponsePayload": {}, 
+							"ResultOutputDetails": { 
+								"ResultCode": "200", 
+								"ResultStatus": "Success", 
+								"ResultMessage": "Request Completed Successfully" 
+							} 
+						}         
+</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:ResponseTimeStamp"/>
+                            <arg evaluator="xml" expression="$ctx:CorrelationID"/>
+                            <arg evaluator="xml" expression="$ctx:RequestedChannel"/>
+                        </args>
+                    </payloadFactory>
+                </else>
+            </filter>
+            <property expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd' 'HH:mm:ss&quot;)" name="APIOutTime" scope="default" type="STRING"/>
+            <property expression="json-eval($)" name="FinalResponsePayload" scope="default" type="STRING"/>
+            <call-template target="logtemplatev1">
+                <with-param name="APIInOutTime" value="{fn:concat('CreateWO API OutTime is :', $ctx:APIOutTime)}"/>
+                <with-param name="message" value="{fn:concat('CreateWO API Final Payload is :', $ctx:FinalResponsePayload)}"/>
+                <with-param name="ValidateInOutTime" value="{$ctx:APIOutTime}"/>
+            </call-template>
+            <respond/>
+        </then>
+        <else>
+            <property expression="$ctx:statusCode" name="flowerrorhandling" scope="default" type="STRING"/>
+            <sequence key="FaultSequence"/>
+        </else>
+    </filter>
+</sequence>

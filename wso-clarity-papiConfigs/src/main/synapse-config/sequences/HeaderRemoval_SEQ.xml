@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="HeaderRemoval_SEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <header action="remove" name="Server" scope="transport"/>
+    <header action="remove" name="Access-Control-Allow-Origin" scope="transport"/>
+    <header action="remove" name="Origin" scope="transport"/>
+    <property action="remove" name="TRANSPORT_HEADERS" scope="axis2"/>
+    <property action="remove" name="EXCESS_TRANSPORT_HEADERS" scope="axis2"/>
+</sequence>

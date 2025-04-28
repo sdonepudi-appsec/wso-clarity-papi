@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="logtemplatev1" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter defaultValue="" isMandatory="false" name="message"/>
+    <parameter defaultValue="" isMandatory="false" name="APIInOutTime"/>
+    <parameter defaultValue="" isMandatory="false" name="ValidateInOutTime"/>
+    <sequence>
+        <filter regex="true" source="boolean($func:ValidateInOutTime)">
+            <then>
+                <log level="custom">
+                    <property expression="$func:message" name="Message"/>
+                    <property expression="$func:APIInOutTime" name="APIInOutTime"/>
+                </log>
+            </then>
+            <else>
+                <log level="custom">
+                    <property expression="$func:message" name="Message"/>
+                </log>
+            </else>
+        </filter>
+    </sequence>
+</template>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/oss/trouble-ticket/v1.0" name="wso-clarity-papi-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/retrieveCircuitsInformation">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CircuitInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/retrieveCrossConnectInformation">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CrossConnectInSequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="CrossConnectOutSequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/retrieveServicesInformation">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="RetrieveServicesInformationInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/retrieveAccountDetails">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="RetrieveAccountDetailsInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/accountInformationAndserviceList">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="RetreiveAccountAndServicesInfoInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/createParentCase">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CreateParentCaseInSequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="CreateParentCaseOutSequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/createCase">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CreateCaseInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/updateCase">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="UpdateCaseInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/addNotes">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="AddCaseNotesInsequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/closeWorkOrder">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CloseWOInSequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="CloseWOOutSequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/createSDMTicket">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CreateSDMTicketInSequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="CreateSDMTicketOutSequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/closedSDMTicket">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CloseSDMTicketInSequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="CloseSDMTicketOutSequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/updateServiceAndCase">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="UpdateServiceCaseInSequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="UpdateServiceCaseOutSequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/CEPOAuth">
+        <inSequence>
+            <sequence key="CEPOAuthGenerationSEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/OFSCOAuth">
+        <inSequence>
+            <sequence key="OFSCOAuthGenerationSEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/SDMOAuth">
+        <inSequence>
+            <sequence key="SDMOAuthGenerationSEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/createWorkOrder">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CreateWOInsequence"/>
+        </inSequence>
+        <outSequence>
+            <sequence key="CreateWOOutsequence"/>
+        </outSequence>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/retrieveEnrichFaultCase">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="EnrichFaultCaseInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/CREATE_FAULT_TICKET">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CreateFaultTicketInSequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/createFaultTicket">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="CreateFaultTicketMultiChannelInSEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/GET_FAULT_TICKET">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="GetFaultTicketInSEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/fetchCaseDetails">
+        <inSequence>
+            <sequence key="HeaderRemoval_SEQ"/>
+            <sequence key="FaultFetchCaseInSEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" uri-template="/health">
+        <inSequence>
+            <payloadFactory media-type="json">
+                <format>{"status": "success", "message": "Health check successful"}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

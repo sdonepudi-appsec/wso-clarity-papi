@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="WSOHTTPSDM_EP" xmlns="http://ws.apache.org/ns/synapse">
+    <address format="soap11" uri="https://stg-api-ows.esa.smart.com.ph:31943/adc-intg/api/rest/v1/PLDT_Webservice/PLDT_SDM_CEP/">
+        <suspendOnFailure>
+            <initialDuration>-1</initialDuration>
+            <progressionFactor>1.0</progressionFactor>
+        </suspendOnFailure>
+        <markForSuspension>
+            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+        </markForSuspension>
+    </address>
+</endpoint>

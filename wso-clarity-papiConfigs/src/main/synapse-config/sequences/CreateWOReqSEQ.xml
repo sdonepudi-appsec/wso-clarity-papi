@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreateWOReqSEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="xml">
+        <format>
+            <FaultTicket xmlns="http://www.pldt.org/oic/integration/serviceticket" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <ServiceId>$1</ServiceId>
+                <FTNumber>$2</FTNumber>
+                <ServiceType>$3</ServiceType>
+                <FaultType>$4</FaultType>
+                <Action>$5</Action>
+            </FaultTicket>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="get-property('ServiceID')"/>
+            <arg evaluator="xml" expression="get-property('FTNumber')"/>
+            <arg evaluator="xml" expression="get-property('ServiceType')"/>
+            <arg evaluator="xml" expression="get-property('FaultType')"/>
+            <arg evaluator="xml" expression="get-property('action')"/>
+        </args>
+    </payloadFactory>
+    <property expression="json-eval($)" name="OFSCEndpointRequest" scope="default" type="STRING"/>
+    <call-template target="logtemplatev1">
+        <with-param name="message" value="{fn:concat('CreateWO API OFSC EP Request is :', $ctx:OFSCEndpointRequest)}"/>
+    </call-template>
+    <property action="remove" name="TRANSPORT_HEADERS" scope="axis2"/>
+    <property expression="get-property('env','OFSC_ENDPOINT')" name="OFSCHost" scope="default" type="STRING"/>
+    <property expression="fn:concat($ctx:OFSCHost,'FAULT_TICKET_CONTROLLER/1.0/syncfaultticket')" name="uri.var.httpendpointurl" scope="default" type="STRING"/>
+    <property name="ContentType" scope="axis2" type="STRING" value="application/xml"/>
+    <header expression="$ctx:Authorization" name="Authorization" scope="transport"/>
+    <send>
+        <endpoint key="conf:/WSO/Endpoints/WSOHTTP_EP.xml"/>
+    </send>
+</sequence>

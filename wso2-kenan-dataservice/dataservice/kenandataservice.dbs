@@ -1,0 +1,62 @@
+<data name="kenandataservice" serviceNamespace="" serviceGroup="" transports="http https">
+    <config id="ProcedureCallService">
+     <property name="org.wso2.ws.dataservice.user">$SYSTEM:KENAN_USERNAME</property>
+     <property name="org.wso2.ws.dataservice.password">$SYSTEM:KENAN_PASSWORD</property>
+     <property name="org.wso2.ws.dataservice.protocol">$SYSTEM:KENAN_URL</property>
+     <property name="org.wso2.ws.dataservice.driver">$SYSTEM:KENAN_DRIVER</property>
+  </config>
+  <query id="AccountServiceGetInfo" useConfig="ProcedureCallService">
+    <sql>CALL ARBOR.PLDT_CEP_GET_INFO(?,?,?)</sql>
+    <param type="IN" name="ID" optional="false" sqlType="INTEGER" paramType="SCALAR" />
+    <param type="IN" name="ACCTID" optional="false" sqlType="STRING" paramType="SCALAR" />
+    <param type="OUT" name="V_RESPONSE" optional="false" sqlType="ORACLE_REF_CURSOR" paramType="SCALAR" />
+    <result outputType="json">
+		{
+    "data": {
+        "AccountAndServiceInformation": [
+            {
+                "CustomerID": "$CUSTOMER_ID",
+                "CustomerType": "$CUSTOMER_TYPE",
+                "CustomerSubType": "$CUSTOMER_SUBTYPE",
+                "CustomerName": "$CUSTOMER_NAME",
+                "CustomerStatus": "$CUSTOMER_STATUS",
+                "CustomerAddress": "$CUSTOMER_ADDRESS",
+                "BillingAccountID": "$BILLING_ACCOUNT_NO",
+                "BillingAccountName": "$BILLING_ACCOUNT_NAME",
+                "MarketSegment": "$MARKET_SEGMENT",
+                "PrimaryContactName": "$PRIMARY_CONTACT_NAME",
+                "PrimaryContactPhone": "$PRIMARY_CONTACT_PHONE",
+                "PrimaryContactEmail": "$PRIMARY_CONTACT_EMAIL",
+                "SecondaryContactEmail": "$SECONDARY_CONTACT_EMAIL",
+                "SecondaryContactName": "$SECONDARY_CONTACT_NAME",
+                "SecondaryContactPhone": "$SECONDARY_CONTACT_PHONE",
+                "IndustryType": "$INDUSTRY_TYPE",
+                "Geography": "$GEOGRAPHY_GEOCODE",
+                "IndustrySubType": "$INDUSTRY_SUBTYPE",
+                "IndustryGroup": "$INDUSTRY_GROUP",
+                "PriorityTagging": "$PRIORITY_TAGGING",
+                "RmAccount": "$RM_ACCOUNT",
+                "ServiceID": "$SERVICE_ID",
+                "PhoneID": "$PHONE_NUMBER",
+                "ServiceType": "$SERVICE_TYPE",
+                "ServiceStatus": "$SERVICE_STATUS",
+                "ServiceAddress": "$SERVICE_ADDRESS",
+                "ServiceStatusDate": "$SERVICE_STATUS_DATE",
+                "ModemOwnership": "$MODEM_OWNERSHIP",
+                "HomeServiceDevice": "$HOME_SERVICE_DEVICE",
+                "Speed": "$SPEED_BASE",
+                "Package": "$PACKAGE",
+                "CountOfMeshAndBrand": "$COUNT_OF_MESH_AND_BRAND"
+            }
+        ]
+    }
+}
+ </result>
+  </query>
+  <operation name="AccountServiceSP" returnRequestStatus="true">
+    <call-query href="AccountServiceGetInfo">
+      <with-param name="ID" query-param="ID"/>
+	  <with-param name="ACCTID" query-param="ACCTID"/>
+    </call-query>
+  </operation>
+</data>

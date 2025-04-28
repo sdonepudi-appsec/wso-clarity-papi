@@ -1,0 +1,11 @@
+---
+key: "wso-clarity-papi-api-1.0.0"
+name : "wso-clarity-papi-api"
+displayName : "wso-clarity-papi-api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/oss/trouble-ticket/v1.0 "
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

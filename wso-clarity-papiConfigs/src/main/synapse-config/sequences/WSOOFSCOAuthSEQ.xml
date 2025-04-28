@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="WSOOFSCOAuthSEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="get-property('registry', 'conf:resources/configs.json@wso.ofsc.host')" name="uri.var.httpendpointurl" scope="default" type="STRING"/>
+    <call>
+        <endpoint key="conf:/WSO/Endpoints/WSOHTTP_EP.xml"/>
+    </call>
+    <property expression="json-eval($.access_token)" name="OFSCAccessToken" scope="default" type="STRING"/>
+    <property expression="concat('Bearer ', $ctx:OFSCAccessToken)" name="Authorization" scope="default" type="STRING"/>
+    <call-template target="logtemplatev1">
+        <with-param name="message" value="{fn:concat('OFSC Token API Response is :', $ctx:OFSCAccessToken)}"/>
+    </call-template>
+</sequence>

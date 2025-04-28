@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ValidationSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <switch source="$ctx:ValidationType">
+        <case regex="IdValidation">
+            <filter regex="true" source="boolean($ctx:ServiceId or $ctx:CircuitID)">
+                <then>
+                    <property name="IdValidationResult" scope="default" type="STRING" value="success"/>
+                </then>
+                <else>
+                    <property name="IdValidationResult" scope="default" type="STRING" value="fail"/>
+                    <property name="IdValdFailMessage" scope="default" type="STRING" value="ServiceID or CircuitID is Required"/>
+                </else>
+            </filter>
+        </case>
+        <case regex="GetAcctServiceInfoValidation">
+            <filter regex="true" source="boolean($ctx:ServiceID or $ctx:PhoneID or $ctx:BillingAccountID)">
+                <then>
+                    <property name="GetAcctServiceInfoValidationResult" scope="default" type="STRING" value="success"/>
+                </then>
+                <else>
+                    <property name="GetAcctServiceInfoValidationResult" scope="default" type="STRING" value="fail"/>
+                    <property name="GetAcctServiceInfoValdFailMessage" scope="default" type="STRING" value="ServiceID or PhoneID or BillingAccountID is Required"/>
+                </else>
+            </filter>
+        </case>
+        <case regex="GetAcctDetailsValidation">
+            <filter regex="true" source="boolean($ctx:MarketSegment and $ctx:BillingAccountID)">
+                <then>
+                    <property name="GetAcctDetailsValidationResult" scope="default" type="STRING" value="success"/>
+                </then>
+                <else>
+                    <property name="GetAcctDetailsValidationResult" scope="default" type="STRING" value="fail"/>
+                    <filter xpath="$ctx:MarketSegment='' and $ctx:BillingAccountID=''">
+                        <then>
+                            <property name="GetAcctDetailsFailMessage" scope="default" type="STRING" value="MarketSegment and BillingAccountID is Required"/>
+                        </then>
+                        <else>
+                            <filter regex="false" source="boolean($ctx:MarketSegment)">
+                                <then>
+                                    <property name="GetAcctDetailsFailMessage" scope="default" type="STRING" value="MarketSegment is Required"/>
+                                </then>
+                                <else>
+                                    <property name="GetAcctDetailsFailMessage" scope="default" type="STRING" value="BillingAccountID is Required"/>
+                                </else>
+                            </filter>
+                        </else>
+                    </filter>
+                </else>
+            </filter>
+        </case>
+        <case regex="HdrTstmpValidation">
+            <filter regex="true" source="boolean($ctx:InTimeStamp and $ctx:CorrelationID)">
+                <then>
+                    <property name="HdrTstmpValidationResult" scope="default" type="STRING" value="success"/>
+                </then>
+                <else>
+                    <property name="HdrTstmpValidationResult" scope="default" type="STRING" value="fail"/>
+                    <filter xpath="$ctx:InTimeStamp='' and $ctx:CorrelationID=''">
+                        <then>
+                            <property name="HdrTstmpFailMessage" scope="default" type="STRING" value="TimeStamp and CorrelationID is Required"/>
+                        </then>
+                        <else>
+                            <filter regex="false" source="boolean($ctx:InTimeStamp)">
+                                <then>
+                                    <property name="HdrTstmpFailMessage" scope="default" type="STRING" value="TimeStamp is Required"/>
+                                </then>
+                                <else>
+                                    <property name="HdrTstmpFailMessage" scope="default" type="STRING" value="CorrelationID is Required"/>
+                                </else>
+                            </filter>
+                        </else>
+                    </filter>
+                </else>
+            </filter>
+        </case>
+        <default/>
+    </switch>
+</sequence>

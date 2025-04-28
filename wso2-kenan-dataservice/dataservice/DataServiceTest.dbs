@@ -1,0 +1,31 @@
+<data name="DataServiceTest" serviceNamespace="" serviceGroup="" transports="http https">
+    <config id="ProcedureCallService">
+     <property name="org.wso2.ws.dataservice.user">$SYSTEM:KENAN_USERNAME</property>
+     <property name="org.wso2.ws.dataservice.password">$SYSTEM:KENAN_PASSWORD</property>
+     <property name="org.wso2.ws.dataservice.protocol">$SYSTEM:KENAN_URL</property>
+     <property name="org.wso2.ws.dataservice.driver">$SYSTEM:KENAN_DRIVER</property>
+  </config>
+  <query id="AccountServiceGetInfo" useConfig="ProcedureCallService">
+    <sql>CALL ARBOR.PLDT_CEP_GET_INFO(?,?,?)</sql>
+    <param type="IN" name="ID" optional="false" sqlType="INTEGER" paramType="SCALAR" />
+    <param type="IN" name="ACCTID" optional="false" sqlType="STRING" paramType="SCALAR" />
+    <param type="OUT" name="V_RESPONSE" optional="false" sqlType="ORACLE_REF_CURSOR" paramType="SCALAR" />
+    <result outputType="json">
+    {
+    "data": {
+        "AccountAndServiceInformation": [
+            {
+                "CustomerID": "$V_RESPONSE"
+            }
+        ]
+    }
+}
+    </result>
+  </query>
+  <operation name="AccountServiceSP" returnRequestStatus="true">
+    <call-query href="AccountServiceGetInfo">
+      <with-param name="ID" query-param="ID"/>
+	  <with-param name="ACCTID" query-param="ACCTID"/>
+    </call-query>
+  </operation>
+</data>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreateWOInsequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="get-property(&quot;SYSTEM_DATE&quot;, &quot;yyyy-MM-dd' 'HH:mm:ss&quot;)" name="APIInTime" scope="default" type="STRING"/>
+    <property expression="json-eval($)" name="CreateWOInput" scope="default" type="STRING"/>
+    <call-template target="logtemplatev1">
+        <with-param name="APIInOutTime" value="{fn:concat('CreateWO API InTime is :', $ctx:APIInTime)}"/>
+        <with-param name="message" value="{fn:concat('CreateWO API Input Payload is :', $ctx:CreateWOInput)}"/>
+        <with-param name="ValidateInOutTime" value="{$ctx:APIInTime}"/>
+    </call-template>
+    <propertyGroup description="InputLogging">
+        <property expression="json-eval($.Header.TimeStamp)" name="InTimeStamp" scope="default" type="STRING"/>
+        <property expression="json-eval($.Header.CorrelationID)" name="CorrelationID" scope="default" type="STRING"/>
+        <property expression="json-eval($.Header.RequestedChannel)" name="RequestedChannel" scope="default" type="STRING"/>
+        <property expression="get-property('SERVER_IP')" name="IPAddress" scope="default" type="STRING"/>
+        <property expression="json-eval($.RequestPayload.ServiceID)" name="ServiceID" scope="default" type="STRING"/>
+        <property expression="json-eval($.RequestPayload.ServiceType)" name="ServiceType" scope="default" type="STRING"/>
+        <property expression="json-eval($.RequestPayload.FaultType)" name="FaultType" scope="default" type="STRING"/>
+        <property expression="json-eval($.RequestPayload.Action)" name="action" scope="default" type="STRING"/>
+        <property expression="json-eval($.RequestPayload.FTNumber)" name="FTNumber" scope="default" type="STRING"/>
+    </propertyGroup>
+    <property name="ValidationType" scope="default" type="STRING" value="HdrTstmpValidation"/>
+    <sequence key="ValidationSequence"/>
+    <property expression="$ctx:HdrTstmpValidationResult" name="HdrTstmpValidationResult" scope="default" type="STRING"/>
+    <property expression="$ctx:HdrTstmpFailMessage" name="HdrTstmpFailMessage" scope="default" type="STRING"/>
+    <filter xpath="$ctx:HdrTstmpValidationResult='success'">
+        <then>
+            <sequence key="WSOOFSCOAuthSEQ"/>
+            <sequence key="CreateWOReqSEQ"/>
+        </then>
+        <else>
+            <property expression="$ctx:HdrTstmpFailMessage" name="ErrMessage" scope="default" type="STRING"/>
+            <property name="flowerrorhandling" scope="default" type="STRING" value="CommnErrHandle"/>
+            <sequence key="FaultSequence"/>
+        </else>
+    </filter>
+</sequence>

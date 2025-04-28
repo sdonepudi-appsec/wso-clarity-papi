@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="configs" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>configs.json</file>
+            <path>/_system/config/resources</path>
+            <mediaType>application/json</mediaType>
+            <properties>
+                <property key="wso.cep.host" value="http://localhost:8290/oss/trouble-ticket/v1.0/CEPOAuth"/>
+                <property key="wso.sdm.host" value="http://localhost:8290/oss/trouble-ticket/v1.0/SDMOAuth"/>
+                <property key="wso.ofsc.host" value="http://localhost:8290/oss/trouble-ticket/v1.0/OFSCOAuth"/>
+            </properties>
+        </item>
+    </artifact>
+    <artifact name="WSO_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSO_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="WSOHTTP_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSOHTTP_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="WSOHTTPPATCH_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSOHTTPPATCH_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="WSOHTTPGET_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSOHTTPGET_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="WSOHTTPSDM_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSOHTTPSDM_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="WSOInflightClarity_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSOInflightClarity_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="WSOInflightHistory_EP" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>WSOInflightHistory_EP.xml</file>
+            <path>/_system/config/WSO/Endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+</artifacts>

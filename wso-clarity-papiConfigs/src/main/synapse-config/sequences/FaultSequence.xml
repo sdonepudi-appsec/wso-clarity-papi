@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="FaultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <switch source="$ctx:flowerrorhandling">
+        <case regex="500">
+            <property name="errorMessage" scope="default" type="STRING" value="Internal server error"/>
+        </case>
+        <case regex="400">
+            <property name="errorMessage" scope="default" type="STRING" value="Bad Request"/>
+        </case>
+        <case regex="401">
+            <property name="errorMessage" scope="default" type="STRING" value="Unauthorized"/>
+        </case>
+        <case regex="404">
+            <property name="errorMessage" scope="default" type="STRING" value="Not Found"/>
+        </case>
+        <case regex="403">
+            <property name="errorMessage" scope="default" type="STRING" value="Forbidden"/>
+        </case>
+        <case regex="405">
+            <property name="errorMessage" scope="default" type="STRING" value="Method Not Allowed"/>
+        </case>
+        <case regex="415">
+            <property name="errorMessage" scope="default" type="STRING" value="Unsupported Media Type"/>
+        </case>
+        <case regex="503">
+            <property name="errorMessage" scope="default" type="STRING" value="Service Unavailable"/>
+        </case>
+        <case regex="504">
+            <property name="errorMessage" scope="default" type="STRING" value="Gateway Timeout"/>
+        </case>
+        <case regex="502">
+            <property name="errorMessage" scope="default" type="STRING" value="Bad Gateway"/>
+        </case>
+        <case regex="CommnErrHandle">
+            <property expression="$ctx:ErrMessage" name="errorMessage" scope="default" type="STRING"/>
+            <filter xpath="$ctx:CloseSDMErrHandle ='true'">
+                <then>
+                    <property expression="$ctx:MessageCode" name="flowerrorhandling" scope="default" type="STRING"/>
+                </then>
+                <else>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                    <property expression="$axis2:HTTP_SC" name="flowerrorhandling" scope="default" type="STRING"/>
+                </else>
+            </filter>
+        </case>
+        <default>
+            <switch source="get-property('IsFlowFrom')">
+                <case regex="KenanDSS">
+                    <filter xpath="$ctx:SOAPErrorHandle !=''">
+                        <then>
+                            <filter xpath="$ctx:GetFaultTicketFlow !='true'">
+                                <then>
+                                    <property name="CEPErrMessage" scope="default" type="STRING" value="No Data Found"/>
+                                    <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+                                    <sequence key="CreateFaultTicketErrorSequence"/>
+                                </then>
+                                <else>
+                                    <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+                                    <sequence key="GetFaultTicketErrorSequence"/>
+                                </else>
+                            </filter>
+                        </then>
+                        <else>
+                            <property name="flowerrorhandling" scope="default" type="STRING" value="10001"/>
+                            <property name="errorMessage" scope="default" type="STRING" value="No Data Found"/>
+                            <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+                        </else>
+                    </filter>
+                </case>
+                <case regex="DefaultKenanDSS">
+                    <enrich>
+                        <source clone="false" property="DefaultClarityResponse" type="property"/>
+                        <target type="body"/>
+                    </enrich>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+                    <respond/>
+                </case>
+                <default>
+                    <property expression="$ctx:ERROR_CODE" name="flowerrorhandling" scope="default" type="STRING"/>
+                    <property expression="$ctx:ERROR_MESSAGE" name="errorMessage" scope="default" type="STRING"/>
+                    <property expression="$ctx:ERROR_DETAIL" name="errorDetail" scope="default" type="STRING"/>
+                </default>
+            </switch>
+        </default>
+    </switch>
+    <payloadFactory media-type="json">
+        <format>
+ {
+        "Header": {
+        "TimeStamp": "$1",
+        "CorrelationID": "$2",
+        "RequestedChannel": "$3"
+        },       
+       "ResponsePayload": {
+        "ResultOutputDetails": {
+        "ResultCode": "$4",
+        "ResultStatus": "Failed",
+        "ResultMessage": "$5"
+        } 
+        }
+        }
+</format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:InTimeStamp"/>
+            <arg evaluator="xml" expression="$ctx:CorrelationID"/>
+            <arg evaluator="xml" expression="$ctx:RequestedChannel"/>
+            <arg evaluator="xml" expression="$ctx:flowerrorhandling"/>
+            <arg evaluator="xml" expression="$ctx:errorMessage"/>
+        </args>
+    </payloadFactory>
+    <respond/>
+</sequence>

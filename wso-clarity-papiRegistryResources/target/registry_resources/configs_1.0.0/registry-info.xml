@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <item>
+        <file>configs.json</file>
+        <path>/_system/config/resources</path>
+        <mediaType>application/json</mediaType>
+        <properties>
+            <property key="wso.cep.host" value="http://localhost:8290/oss/trouble-ticket/v1.0/CEPOAuth"/>
+            <property key="wso.ofsc.host" value="http://localhost:8290/oss/trouble-ticket/v1.0/OFSCOAuth"/>
+            <property key="wso.sdm.host" value="http://localhost:8290/oss/trouble-ticket/v1.0/SDMOAuth"/>
+        </properties>
+    </item>
+</resources>

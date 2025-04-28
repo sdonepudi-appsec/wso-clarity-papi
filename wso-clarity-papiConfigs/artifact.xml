@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="wso-clarity-papi-api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/wso-clarity-papi-api.xml</file>
+    </artifact>
+    <artifact name="wso-clarity-papi-api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/wso-clarity-papi-api_swagger.yaml</file>
+    </artifact>
+    <artifact name="wso-clarity-papi-api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/wso-clarity-papi-api_metadata.yaml</file>
+    </artifact>
+    <artifact name="CircuitInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CircuitInSequence.xml</file>
+    </artifact>
+    <artifact name="CircuitOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CircuitOutSequence.xml</file>
+    </artifact>
+    <artifact name="FaultSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FaultSequence.xml</file>
+    </artifact>
+    <artifact name="ValidationSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ValidationSequence.xml</file>
+    </artifact>
+    <artifact name="GetClarityCircuitReqSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityCircuitReqSequence.xml</file>
+    </artifact>
+    <artifact name="logtemplatev1" groupId="com.example.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/logtemplatev1.xml</file>
+    </artifact>
+    <artifact name="CrossConnectInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CrossConnectInSequence.xml</file>
+    </artifact>
+    <artifact name="CrossConnectOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CrossConnectOutSequence.xml</file>
+    </artifact>
+    <artifact name="GetClarityCrossConnReqSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityCrossConnReqSequence.xml</file>
+    </artifact>
+    <artifact name="RetrieveServicesInformationInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RetrieveServicesInformationInSequence.xml</file>
+    </artifact>
+    <artifact name="RetrieveServicesInformationOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RetrieveServicesInformationOutSequence.xml</file>
+    </artifact>
+    <artifact name="GetClarityServiceReqSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityServiceReqSequence.xml</file>
+    </artifact>
+    <artifact name="RetrieveAccountDetailsInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RetrieveAccountDetailsInSequence.xml</file>
+    </artifact>
+    <artifact name="RetrieveAccountDetailsOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RetrieveAccountDetailsOutSequence.xml</file>
+    </artifact>
+    <artifact name="GetClarityAcctDetailsReqSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityAcctDetailsReqSequence.xml</file>
+    </artifact>
+    <artifact name="KenanTransSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/KenanTransSEQ.xml</file>
+    </artifact>
+    <artifact name="RetreiveAccountAndServicesInfoInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RetreiveAccountAndServicesInfoInSequence.xml</file>
+    </artifact>
+    <artifact name="GetCircuit_CrossConnect_Schema_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/GetCircuit_CrossConnect_Schema_LE.xml</file>
+    </artifact>
+    <artifact name="StringConverse_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/StringConverse_LE.xml</file>
+    </artifact>
+    <artifact name="StringCrossConverse_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/StringCrossConverse_LE.xml</file>
+    </artifact>
+    <artifact name="GetClarityCircuitResSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityCircuitResSequence.xml</file>
+    </artifact>
+    <artifact name="GetClarityCrossConnResSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityCrossConnResSequence.xml</file>
+    </artifact>
+    <artifact name="GetCrossConnectArrayConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/GetCrossConnectArrayConverse.xml</file>
+    </artifact>
+    <artifact name="GetServiceDetailsArrayConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/GetServiceDetailsArrayConverse.xml</file>
+    </artifact>
+    <artifact name="GetClarityServiceResSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityServiceResSequence.xml</file>
+    </artifact>
+    <artifact name="GetClarityAcctDetailsResSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetClarityAcctDetailsResSequence.xml</file>
+    </artifact>
+    <artifact name="KenanTransConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/KenanTransConverse.xml</file>
+    </artifact>
+    <artifact name="CEPOAuthGenerationSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPOAuthGenerationSEQ.xml</file>
+    </artifact>
+    <artifact name="OAuthTokenCache_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OAuthTokenCache_SEQ.xml</file>
+    </artifact>
+    <artifact name="CreateParentCaseInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateParentCaseInSequence.xml</file>
+    </artifact>
+    <artifact name="CreateParentCaseOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateParentCaseOutSequence.xml</file>
+    </artifact>
+    <artifact name="CreateCaseInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateCaseInSequence.xml</file>
+    </artifact>
+    <artifact name="CreateCaseOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateCaseOutSequence.xml</file>
+    </artifact>
+    <artifact name="ConvertDelimeter_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/ConvertDelimeter_LE.xml</file>
+    </artifact>
+    <artifact name="CEPParentCaseReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPParentCaseReqSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPParentCaseResSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPParentCaseResSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPCaseReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPCaseReqSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPCaseResSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPCaseResSEQ.xml</file>
+    </artifact>
+    <artifact name="UpdateCaseInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UpdateCaseInSequence.xml</file>
+    </artifact>
+    <artifact name="UpdateCaseReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UpdateCaseReqSEQ.xml</file>
+    </artifact>
+    <artifact name="UpdateCaseOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UpdateCaseOutSequence.xml</file>
+    </artifact>
+    <artifact name="AddCaseNotesInsequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/AddCaseNotesInsequence.xml</file>
+    </artifact>
+    <artifact name="AddCaseReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/AddCaseReqSEQ.xml</file>
+    </artifact>
+    <artifact name="AddCaseNotesOutsequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/AddCaseNotesOutsequence.xml</file>
+    </artifact>
+    <artifact name="CloseWOInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CloseWOInSequence.xml</file>
+    </artifact>
+    <artifact name="CloseWOOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CloseWOOutSequence.xml</file>
+    </artifact>
+    <artifact name="CloseWOReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CloseWOReqSEQ.xml</file>
+    </artifact>
+    <artifact name="OFSCOAuthGenerationSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OFSCOAuthGenerationSEQ.xml</file>
+    </artifact>
+    <artifact name="OFSCOAuthTokenCache_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OFSCOAuthTokenCache_SEQ.xml</file>
+    </artifact>
+    <artifact name="CreateSDMTicketInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateSDMTicketInSequence.xml</file>
+    </artifact>
+    <artifact name="SDMCreateTicketReqSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SDMCreateTicketReqSequence.xml</file>
+    </artifact>
+    <artifact name="CreateSDMTicketOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateSDMTicketOutSequence.xml</file>
+    </artifact>
+    <artifact name="CloseSDMTicketInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CloseSDMTicketInSequence.xml</file>
+    </artifact>
+    <artifact name="CloseSDMTicketOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CloseSDMTicketOutSequence.xml</file>
+    </artifact>
+    <artifact name="SDMCloseTicketReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SDMCloseTicketReqSEQ.xml</file>
+    </artifact>
+    <artifact name="UpdateServiceCaseInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UpdateServiceCaseInSequence.xml</file>
+    </artifact>
+    <artifact name="UpdateServiceCaseOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UpdateServiceCaseOutSequence.xml</file>
+    </artifact>
+    <artifact name="UpdateServiceCaseReqSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/UpdateServiceCaseReqSequence.xml</file>
+    </artifact>
+    <artifact name="WSOCEPOAuthSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/WSOCEPOAuthSEQ.xml</file>
+    </artifact>
+    <artifact name="WSOOFSCOAuthSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/WSOOFSCOAuthSEQ.xml</file>
+    </artifact>
+    <artifact name="CreateWOInsequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateWOInsequence.xml</file>
+    </artifact>
+    <artifact name="CreateWOOutsequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateWOOutsequence.xml</file>
+    </artifact>
+    <artifact name="CreateWOReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateWOReqSEQ.xml</file>
+    </artifact>
+    <artifact name="FetchAllChoiceListConditionSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FetchAllChoiceListConditionSEQ.xml</file>
+    </artifact>
+    <artifact name="GetAcctDetailsArrayConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/GetAcctDetailsArrayConverse.xml</file>
+    </artifact>
+    <artifact name="FetchAllChoiceListSchedulerSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FetchAllChoiceListSchedulerSEQ.xml</file>
+    </artifact>
+    <artifact name="FetchAllChoiceListTask" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/FetchAllChoiceListTask.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigationConditionSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PldtInvestigationConditionSEQ.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigationScheduler1SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PldtInvestigationScheduler1SEQ.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigationScheduler2SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PldtInvestigationScheduler2SEQ.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigationScheduler3SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PldtInvestigationScheduler3SEQ.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigationScheduler4SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PldtInvestigationScheduler4SEQ.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigation1Task" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/PldtInvestigation1Task.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigation2Task" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/PldtInvestigation2Task.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigation3Task" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/PldtInvestigation3Task.xml</file>
+    </artifact>
+    <artifact name="PldtInvestigation4Task" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/PldtInvestigation4Task.xml</file>
+    </artifact>
+    <artifact name="EnrichFaultCaseInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/EnrichFaultCaseInSequence.xml</file>
+    </artifact>
+    <artifact name="EnrichFaultCaseOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/EnrichFaultCaseOutSequence.xml</file>
+    </artifact>
+    <artifact name="CEPGetCaseReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPGetCaseReqSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPGetCaseResSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPGetCaseResSEQ.xml</file>
+    </artifact>
+    <artifact name="RBGFlow_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RBGFlow_SEQ.xml</file>
+    </artifact>
+    <artifact name="SME_CBG_Flow_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SME_CBG_Flow_SEQ.xml</file>
+    </artifact>
+    <artifact name="CreateFaultTicketInSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateFaultTicketInSequence.xml</file>
+    </artifact>
+    <artifact name="CreateFaultTicketOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateFaultTicketOutSequence.xml</file>
+    </artifact>
+    <artifact name="CreateFaultTicketErrorSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateFaultTicketErrorSequence.xml</file>
+    </artifact>
+    <artifact name="AcctServiceDefault_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/AcctServiceDefault_SEQ.xml</file>
+    </artifact>
+    <artifact name="GetAcctDetailsPhoneIdConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/GetAcctDetailsPhoneIdConverse.xml</file>
+    </artifact>
+    <artifact name="CreateFaultTicketMultiChannelInSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreateFaultTicketMultiChannelInSEQ.xml</file>
+    </artifact>
+    <artifact name="GetFaultTicketInSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetFaultTicketInSEQ.xml</file>
+    </artifact>
+    <artifact name="GetFaultTicketKenan_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetFaultTicketKenan_SEQ.xml</file>
+    </artifact>
+    <artifact name="GetFaultTicketOutSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetFaultTicketOutSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPImpactListReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPImpactListReqSEQ.xml</file>
+    </artifact>
+    <artifact name="SDMOAuthGenerationSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SDMOAuthGenerationSEQ.xml</file>
+    </artifact>
+    <artifact name="SDMOAuthTokenCache_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SDMOAuthTokenCache_SEQ.xml</file>
+    </artifact>
+    <artifact name="WSOSDMOAuthSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/WSOSDMOAuthSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPImpactListResSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPImpactListResSEQ.xml</file>
+    </artifact>
+    <artifact name="FaultFetchCaseInSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FaultFetchCaseInSEQ.xml</file>
+    </artifact>
+    <artifact name="FaultFetchCaseOutSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FaultFetchCaseOutSequence.xml</file>
+    </artifact>
+    <artifact name="InvestigationIdFilterSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/InvestigationIdFilterSEQ.xml</file>
+    </artifact>
+    <artifact name="GetFaultTicketErrorSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetFaultTicketErrorSequence.xml</file>
+    </artifact>
+    <artifact name="CaseSchemaConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/CaseSchemaConverse.xml</file>
+    </artifact>
+    <artifact name="CEPOptionSearchReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPOptionSearchReqSEQ.xml</file>
+    </artifact>
+    <artifact name="CEPOptionSearchResSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPOptionSearchResSEQ.xml</file>
+    </artifact>
+    <artifact name="GetCaseCondition_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/GetCaseCondition_SEQ.xml</file>
+    </artifact>
+    <artifact name="CEPFetchChoiceOutOfBoundarySEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPFetchChoiceOutOfBoundarySEQ.xml</file>
+    </artifact>
+    <artifact name="CEPFetchChoiceBoundaryResSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CEPFetchChoiceBoundaryResSEQ.xml</file>
+    </artifact>
+    <artifact name="FetchCaseProperties_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FetchCaseProperties_SEQ.xml</file>
+    </artifact>
+    <artifact name="FetchCaseHistorySEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FetchCaseHistorySEQ.xml</file>
+    </artifact>
+    <artifact name="FetchDetails_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/FetchDetails_LE.xml</file>
+    </artifact>
+    <artifact name="HeaderRemoval_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/HeaderRemoval_SEQ.xml</file>
+    </artifact>
+    <artifact name="ClarityOptionSearchReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ClarityOptionSearchReqSEQ.xml</file>
+    </artifact>
+    <artifact name="ClarityGetCaseReqSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ClarityGetCaseReqSEQ.xml</file>
+    </artifact>
+    <artifact name="Script_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Script_SEQ.xml</file>
+    </artifact>
+    <artifact name="ServiceIDLookup_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ServiceIDLookup_SEQ.xml</file>
+    </artifact>
+    <artifact name="ClarityFetchGetCaseSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ClarityFetchGetCaseSEQ.xml</file>
+    </artifact>
+    <artifact name="ClarityFetchGetByOptionSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ClarityFetchGetByOptionSEQ.xml</file>
+    </artifact>
+    <artifact name="InflightClarityArrayConverse" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/InflightClarityArrayConverse.xml</file>
+    </artifact>
+    <artifact name="InflightStringConverse_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/InflightStringConverse_LE.xml</file>
+    </artifact>
+    <artifact name="NewLineRemove_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/NewLineRemove_LE.xml</file>
+    </artifact>
+    <artifact name="FetchChoiceOutOfBoundarySchedulerSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FetchChoiceOutOfBoundarySchedulerSEQ.xml</file>
+    </artifact>
+    <artifact name="FetchChoiceBoundaryConditionSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FetchChoiceBoundaryConditionSEQ.xml</file>
+    </artifact>
+    <artifact name="CodeConverse_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/CodeConverse_LE.xml</file>
+    </artifact>
+    <artifact name="CommonScriptSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CommonScriptSEQ.xml</file>
+    </artifact>
+    <artifact name="NonParentCodeConverse_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/NonParentCodeConverse_LE.xml</file>
+    </artifact>
+    <artifact name="ServiceEnterpriseValues_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ServiceEnterpriseValues_SEQ.xml</file>
+    </artifact>
+    <artifact name="ServcType_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/ServcType_LE.xml</file>
+    </artifact>
+</artifacts>
