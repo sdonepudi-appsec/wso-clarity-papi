@@ -1,0 +1,26 @@
+<sequence name="orderProcessingSequence">
+    <!-- XXE vulnerability -->
+    <payloadFactory media-type="xml">
+        <format>
+            <orderRequest>
+                $1
+            </orderRequest>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$body//orderDetails"/>
+        </args>
+    </payloadFactory>
+    
+    <!-- SSRF vulnerability -->
+    <call>
+        <endpoint>
+            <http method="GET" uri-template="http://internal-service/process?url={$ctx:externalUrl}"/>
+        </endpoint>
+    </call>
+    
+    <!-- Sensitive data exposure -->
+    <log level="full">
+        <property name="LOG" value="Processing order with CC: "/>
+        <property name="CC_NUMBER" expression="//creditCard/number"/>
+    </log>
+</sequence>

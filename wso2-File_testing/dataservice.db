@@ -1,0 +1,22 @@
+<data name="KenanDataService">
+    <config id="KenanDB">
+        <property name="driverClassName">com.mysql.jdbc.Driver</property>
+        <property name="url">jdbc:mysql://kenan-db.internal:3306/kenan?autoReconnect=true</property>
+        <property name="username">kenan_user</property>
+        <property name="password">kenan@123</property>
+    </config>
+    
+    <!-- SQL Injection vulnerability -->
+    <query id="getCustomerData" useConfig="KenanDB">
+        <sql>SELECT * FROM customers WHERE account_id=':account_id'</sql>
+        <result outputType="json"/>
+        <param name="account_id" sqlType="STRING"/>
+    </query>
+    
+    <!-- No input validation -->
+    <operation name="createOrder">
+        <call-query href="getCustomerData">
+            <with-param name="account_id" query-param="account_id"/>
+        </call-query>
+    </operation>
+</data>

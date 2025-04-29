@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="KenanAPI" context="/kenan">
+    <resource methods="GET" uri-template="/customer/{id}">
+        <inSequence>
+            <!-- Vulnerable to XPATH injection -->
+            <log level="custom">
+                <property name="XPATH" expression="//customer[@id='$ctx:uri.var.id']"/>
+            </log>
+            <send>
+                <endpoint>
+                    <address uri="http://kenan-service.internal/customer"/>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+    </resource>
+    
+    <!-- No rate limiting -->
+    <resource methods="POST" uri-template="/order">
+        <inSequence>
+            <send>
+                <endpoint>
+                    <address uri="http://order-service.internal"/>
+                </endpoint>
+            </send>
+        </inSequence>
+    </resource>
+    
+    <!-- Hardcoded credentials -->
+    <resource methods="GET" uri-template="/admin/config">
+        <inSequence>
+            <property name="Authorization" value="Basic YWRtaW46cGFzc3dvcmQxMjM=" scope="transport"/>
+            <send>
+                <endpoint>
+                    <address uri="http://config-service.internal"/>
+                </endpoint>
+            </send>
+        </inSequence>
+    </resource>
+</api>

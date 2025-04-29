@@ -1,0 +1,32 @@
+{
+    "dashboards": {
+      "security_overview": {
+        "panels": [
+          {
+            "title": "Authentication Attempts",
+            "query": "sum(auth_attempts{app='papi'}) by (status)"
+          },
+          {
+            "title": "SQL Injection Attempts",
+            "query": "count(sql_errors{type='injection'})"
+          }
+        ],
+        "alerts": [
+          {
+            "name": "Brute Force Detected",
+            "condition": "auth_failures > 5",
+            "severity": "critical"
+          }
+        ]
+      }
+    },
+    "response_playbooks": {
+      "sql_injection": {
+        "steps": [
+          "1. Block source IP in WAF",
+          "2. Rotate database credentials",
+          "3. Audit affected endpoints"
+        ]
+      }
+    }
+  }

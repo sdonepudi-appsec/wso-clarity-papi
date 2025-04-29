@@ -1,0 +1,21 @@
+security_policies:
+  authentication:
+    password_complexity: "Minimum 12 chars with special characters"
+    mfa_required: true
+    session_timeout: 900
+  data_protection:
+    encryption: "AES-256 for PII at rest"
+    masking: "Last 4 digits for payment info"
+  network_security:
+    internal_services_only: true
+    allowed_domains: ["pldt.pldtgroup.net", "sageit.com"]
+  api_security:
+    rate_limits:
+      standard: "1000 requests/hour"
+      sensitive: "100 requests/hour"
+    auth_types: ["OAuth2", "JWT"]
+  monitoring:
+    siem_integration: "Splunk"
+    alert_thresholds:
+      auth_failures: "5 attempts/5 min"
+      sql_errors: "10 occurrences/hour"
