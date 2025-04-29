@@ -26,7 +26,7 @@ def ping_host():
 @app.route('/deserialize')
 def insecure_deserialization():
     data = request.args.get('data')
-     obj = pickle.loads(urllib.parse.unquote(data))  # BAD
+    obj = pickle.loads(urllib.parse.unquote(data))  # BAD
     return str(obj)
 
 @app.route('/login')
